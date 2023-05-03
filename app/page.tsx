@@ -51,7 +51,7 @@ export default function Home() {
                   href={
                     process.env.LOCAL_DEVELOPMENT
                       ? `http://localhost:3000/${slug}`
-                      : `http://${process.env.VERCEL_URL}/${slug}`
+                      : `https://chromatica.vercel.app/${slug}`
                   }
                 >
                   <Image
@@ -59,7 +59,7 @@ export default function Home() {
                     src={
                       process.env.LOCAL_DEVELOPMENT
                         ? `http://localhost:3000/${slug}`
-                        : `https://${process.env.VERCEL_URL}/${slug}`
+                        : `https://chromatica.vercel.app/${slug}`
                     }
                     alt=""
                     width={96}
