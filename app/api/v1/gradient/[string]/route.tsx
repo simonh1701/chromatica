@@ -1,6 +1,8 @@
 import { ImageResponse, NextResponse } from "next/server";
 import { generateGradientColors } from "@/lib/colors";
 
+export const runtime = "edge";
+
 export async function GET(
   request: Request,
   {
