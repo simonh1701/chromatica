@@ -3,11 +3,12 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: "/:path*",
-        destination: "/api/v1/gradient/:path*",
+        source: "/:first",
+        destination: "/api/v1/gradient/:first",
+        permanent: false,
       },
     ];
   },
