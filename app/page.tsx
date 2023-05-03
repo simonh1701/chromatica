@@ -47,10 +47,20 @@ export default function Home() {
           >
             {examples.map((slug) => (
               <li key={slug}>
-                <Link href={`http://localhost:3000/${slug}`}>
+                <Link
+                  href={
+                    process.env.LOCAL_DEVELOPMENT
+                      ? `http://localhost:3000/${slug}`
+                      : `http://${process.env.VERCEL_URL}/${slug}`
+                  }
+                >
                   <Image
                     unoptimized
-                    src={`http://localhost:3000/${slug}`}
+                    src={
+                      process.env.LOCAL_DEVELOPMENT
+                        ? `http://localhost:3000/${slug}`
+                        : `https://${process.env.VERCEL_URL}/${slug}`
+                    }
                     alt=""
                     width={96}
                     height={96}
